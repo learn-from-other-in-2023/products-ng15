@@ -68,7 +68,8 @@
               "browserTarget": "products-ng15:build:production"
             },
             "development": {
-              "browserTarget": "products-ng15:build:development"
+              "browserTarget": "products-ng15:build:development",
+              "port": 4008
             }
           },
           "defaultConfiguration": "development"

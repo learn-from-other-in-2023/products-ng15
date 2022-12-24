@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist/products-ng15",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
