@@ -1,21 +1,26 @@
 <app-header [title]="title"></app-header>
 
-<mat-card>
-  <mat-card-content>Simple card</mat-card-content>
-</mat-card>
+<div class="main-container">
+  <!-- <router-outlet></router-outlet> -->
 
-<button mat-raised-button color="primary">Primary</button>
+  <mat-card>
+    <mat-card-content>Simple card</mat-card-content>
+  </mat-card>
 
-<form *ngIf="formGroup" [formGroup]="formGroup">
-  <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
-    <input matInput formControlName="name" name="name" placeholder="Name">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Surname</mat-label>
-    <input matInput formControlName="surname" name="surname" placeholder="Surname">
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onFormSubmit($event)">Submit</button>
-</form>
+  <button mat-raised-button color="primary">Primary</button>
+
+  <form *ngIf="formGroup" [formGroup]="formGroup">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" name="name" placeholder="Name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput formControlName="surname" name="surname" placeholder="Surname">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onFormSubmit($event)">Submit</button>
+  </form>
+
+</div>
 
 <app-footer></app-footer>
