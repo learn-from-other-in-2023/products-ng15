@@ -33,6 +33,8 @@ export class AppComponent implements OnInit, OnDestroy {
     });
 
     this.displayNumbers();
+
+    this.onFormChanges();
   }
 
   ngOnDestroy(): void {
@@ -49,11 +51,20 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
+  onFormChanges(): void {
+    console.log('onFormChanges is called in app.component.ts');
+    this.formGroup?.valueChanges.subscribe({
+      next: (value) => {
+        console.log('Form Value: ' + JSON.stringify(value));
+      },
+    });
+  }
+
   onFormSubmit(event: any): void {
     console.log('onFormSubmit is called in app.component.ts')
     console.log('name: ' + this.name + 'surname: ' + this.surname);
 
-    console.log('Form Valid: ' + this.formGroup?.valid + 'Form Value: ' + JSON.stringify(this.formGroup?.value));
+    console.log('Form Valid: ' + this.formGroup?.valid + ' :: Form Value: ' + JSON.stringify(this.formGroup?.value));
   }
 
 }
