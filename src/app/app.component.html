@@ -6,4 +6,16 @@
 
 <button mat-raised-button color="primary">Primary</button>
 
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="name" name="name" placeholder="Name">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Surname</mat-label>
+    <input matInput [(ngModel)]="surname" name="surname" placeholder="Surname">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onFormSubmit($event)">Submit</button>
+</form>
+
 <app-footer></app-footer>
