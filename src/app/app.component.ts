@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,22 @@ export class AppComponent implements OnInit {
   name: string | undefined;
   surname: string | undefined;
 
-  constructor() { }
+  formGroup: FormGroup | any;
+
+  constructor(private formBuilder: FormBuilder) {
+  }
 
   ngOnInit(): void {
+    console.log('ngOnInit is called in app.component.ts');
+
     // Initialization should be done in ngOnInit()
     this.title = 'Products';
 
-    console.log('ngOnInit is called in app.component.ts')
+    this.formGroup = this.formBuilder.group({
+      name: '',
+      surname: ''
+    });
+
   }
 
   onFormSubmit(event: any): void {
