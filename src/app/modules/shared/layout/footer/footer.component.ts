@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VersionService } from 'src/app/services/version.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  version: string | undefined;
+
+  constructor(private versionService: VersionService) { }
 
   ngOnInit() {
-    console.log('ngOnInit is called in header.component.ts')
+    console.log('ngOnInit is called in header.component.ts');
+
+    this.version = this.versionService.getVersion();
   }
 
 }
