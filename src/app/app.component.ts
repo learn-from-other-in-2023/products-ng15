@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   name: string | undefined;
   surname: string | undefined;
 
-  formGroup: FormGroup | any;
+  formGroup: FormGroup | undefined;
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -24,16 +24,17 @@ export class AppComponent implements OnInit {
     this.title = 'Products';
 
     this.formGroup = this.formBuilder.group({
-      name: '',
-      surname: ''
+      name: ['', Validators.required],
+      surname: ['', Validators.required]
     });
 
   }
 
   onFormSubmit(event: any): void {
     console.log('onFormSubmit is called in app.component.ts')
-    console.log('name: ' + this.name);
-    console.log('surname: ' + this.surname);
+    console.log('name: ' + this.name + 'surname: ' + this.surname);
+
+    console.log('Form Valid: ' + this.formGroup?.valid + 'Form Value: ' + JSON.stringify(this.formGroup?.value));
   }
 
 }
