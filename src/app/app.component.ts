@@ -17,6 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   numbers$: Observable<number> = of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
   numbersSubscription: Subscription | undefined;
+  formSubscription: Subscription | undefined;
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -39,6 +40,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.numbersSubscription?.unsubscribe();
+
+    this.formSubscription?.unsubscribe();
   }
 
   displayNumbers(): void {
@@ -53,7 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onFormChanges(): void {
     console.log('onFormChanges is called in app.component.ts');
-    this.formGroup?.valueChanges.subscribe({
+    this.formSubscription = this.formGroup?.valueChanges.subscribe({
       next: (value) => {
         console.log('Form Value: ' + JSON.stringify(value));
       },
