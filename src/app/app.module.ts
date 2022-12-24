@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
-import { NgMaterialModule } from './modules/shared/ngmaterial.module';
+import { NgMaterialModule } from './modules/ngmaterial.module';
 
 @NgModule({
   declarations: [
