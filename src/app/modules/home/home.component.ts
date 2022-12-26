@@ -9,8 +9,6 @@ import { Observable, of, Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  title = 'Products';
-
   name: string | undefined;
   surname: string | undefined;
 
@@ -25,9 +23,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     console.log('ngOnInit is called in app.component.ts');
-
-    // Initialization should be done in ngOnInit()
-    this.title = 'Products';
 
     this.formGroup = this.formBuilder.group({
       name: ['', Validators.required],
@@ -70,5 +65,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     console.log('Form Valid: ' + this.formGroup?.valid + ' :: Form Value: ' + JSON.stringify(this.formGroup?.value));
   }
-  
+
 }
