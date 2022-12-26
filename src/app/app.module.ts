@@ -9,6 +9,8 @@ import { NgMaterialModule } from './ngmaterial/ngmaterial.module';
 import { HomeComponent } from './modules/home/home.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { ProductsComponent } from './modules/products/products.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ProductsComponent } from './modules/products/products.component';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    NgMaterialModule
+    NgMaterialModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
