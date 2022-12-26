@@ -7,11 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
 import { NgMaterialModule } from './ngmaterial/ngmaterial.module';
 import { HomeComponent } from './modules/home/home.component';
+import { ProfileComponent } from './modules/profile/profile.component';
+import { ProductsComponent } from './modules/products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ProfileComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
