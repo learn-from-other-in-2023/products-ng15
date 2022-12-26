@@ -1,1 +1,26 @@
-<p>home works!</p>
+<app-header [title]="title"></app-header>
+
+<div class="main-container">
+    <!-- <router-outlet></router-outlet> -->
+
+    <mat-card>
+        <mat-card-content>Simple card</mat-card-content>
+    </mat-card>
+
+    <button mat-raised-button color="primary">Primary</button>
+
+    <form *ngIf="formGroup" [formGroup]="formGroup">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" name="name" placeholder="Name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Surname</mat-label>
+            <input matInput formControlName="surname" name="surname" placeholder="Surname">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onFormSubmit()">Submit</button>
+    </form>
+
+</div>
+
+<app-footer></app-footer>
